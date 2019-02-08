@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Admin;
+use App\User;
+use DB;
 class AdminController extends Controller
 {
     /**
@@ -22,12 +24,23 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin');
+        $facilitator = Admin::count();
+        $user = User::count();
+        return view('admin.dashboard')->with([
+          'facilitator'=>$facilitator,
+          'user'=>$user,
+        ]);
     }
     // public function login_headers()
     // {
     //     return view('login-headers');
     // }
+    public function logout(){
+
+    auth()->logout();
+    // redirect to homepage
+    return redirect('/login');
+    }
 
 
 

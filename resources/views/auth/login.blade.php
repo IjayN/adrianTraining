@@ -80,7 +80,7 @@
 
 			</div>
 		  </div>
-		  <a href="register.html" class="float-right text-white">Create an account </a>
+		  <a href="{{url('/register')}}" class="float-right text-white">Create an account </a>
 		</div>
 	  </div>
 	</div>
