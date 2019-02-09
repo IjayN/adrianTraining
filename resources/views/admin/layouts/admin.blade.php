@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="">
+    <link rel="icon" href="{{asset('assets/logo.png')}}">
 
     <title>Adrian ||Dashboard</title>
 
@@ -27,8 +26,8 @@
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
-	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<!--<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>-->
+	<!--<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>-->
 	<![endif]-->
 
 
@@ -45,14 +44,14 @@
 		<!-- Logo -->
 		<a href="index.html" class="logo">
 		  <!-- mini logo -->
-		  <b class="logo-mini">
-			  <span class="light-logo"><img src="images/logo-light.png" alt="logo"></span>
-			  <span class="dark-logo"><img src="images/logo-dark.png" alt="logo"></span>
-		  </b>
+		  {{--<b class="logo-mini">--}}
+			  {{--<span class="light-logo"><img src="{{asset('assets/logo.png')}}" alt="logo"></span>--}}
+			  {{--<span class="dark-logo"><img src="{{asset('assets/logo.png')}}" alt="logo"></span>--}}
+		  {{--</b>--}}
 		  <!-- logo-->
 		  <span class="logo-lg">
-			  <img src="{{asset('images/logo-light-text.png')}}" alt="logo" class="light-logo">
-			  <img src="{{asset('images/logo-dark-text.png')}}" alt="logo" class="dark-logo">
+			  <img src="{{asset('assets/logo.png')}}" alt="logo" class="light-logo">
+			  {{--<img src="{{asset('assets/logo.png')}}" alt="logo" class="dark-logo">--}}
 		  </span>
 		</a>
     <!-- Header Navbar -->
@@ -81,7 +80,7 @@
       <!-- sidebar menu-->
       <ul class="sidebar-menu" data-widget="tree">
           <li class="">
-          <a href="{{url('dashboard')}}">
+          <a href="{{url('admin/dashboard')}}">
               <i class="iconsmind-Dashboard"></i> <span>Dashboard</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-right pull-right"></i>

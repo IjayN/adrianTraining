@@ -20,20 +20,32 @@ Route::prefix('admin')->group(function() {
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard');
 });
+Route::prefix('facilitator')->group(function (){
+    Route::get('/manage', 'FacilitatorController@index')->name('facilitator');
+    Route::get('/add',function (){
+        return view('admin/add_facilitator');
+    });
+});
 
 Auth::routes();
 
-//Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-Route::get('/facilitator/manage', 'FacilitatorController@index')->name('facilitator');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
 Route::post('/register_facilitator', 'FacilitatorController@store')->name('store');
 
 Route::get('/logout', 'AdminController@logout')->name('logout');
 
-// Route::get('/auth/layouts/login-headers', 'HomeController@login_headers')->name('login_headers');
+//Facilitator Functionality
+Route::get('/facilitator/home', 'FacilitatorController@home')->name('home');
+Route::get('/facilitator/add_questions', 'FacilitatorController@questions')->name('add');
+Route::get('/facilitator/current_questions', 'QuestionController@index');
+Route::get('/facilitator/add_questions', 'QuestionController@add_questions');
 
-Route::get('facilitator/add',function (){
-    return view('admin/add_facilitator');
-});
+Route::post('/add_questions', 'QuestionController@store')->name('store');
+Route::get('/facilitator/programme', 'ProgrammeController@index');
+Route::post('/add_programme','ProgrammeController@store' );
 
 
 Route::resource('facilitator','FacilitatorController');
+Route::resource('questions','QuestionController');
+Route::resource('programme','ProgrammeController');

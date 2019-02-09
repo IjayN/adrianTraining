@@ -52,7 +52,7 @@
                                     <form action="{{action('FacilitatorController@destroy',$facilitator['id'])}}" method="POST" >
                                         @csrf
                                         <input name="_method" type="hidden" value="DELETE">
-                                        <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i> </button>
+                                        <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-trash"></i> </button>
                                     </form>
                                 </td>
                             </tr>

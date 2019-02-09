@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Programme;
 use Illuminate\Http\Request;
-use App\Admin;
-use App\User;
-class FacilitatorController extends Controller
+use App\Questition;
+class QuestionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class FacilitatorController extends Controller
      */
     public function index()
     {
-        $facilitators = Admin::all();
-        return view('admin.manage_facilitator',compact('facilitators'));
+        $questions = Questition::all();
+        return view('admin.facilitator.current_questions',compact('questions'));
     }
 
     /**
@@ -36,20 +36,17 @@ class FacilitatorController extends Controller
      */
     public function store(Request $request)
     {
-        // $request = validate->([
-        //   'name'=> 'required|string',
-        //   'email'=> 'required|email',
-        //   'password'=> 'required|string'
-        // ]);
+        $validatedData = $request->validate([
+            'title' => 'required|unique:questitions|max:255',
+            'body' => 'required',
+        ]);
+        $questition= new Questition;
+        $questition->title=$request->get('title');
+        $questition->body=$request->get('body');
 
-        $facilitator= new Admin;
-        $facilitator->name=$request->get('name');
-        $facilitator->email=$request->get('email');
-        $facilitator->password=$request->get('password');
-        $facilitator->save();
+        $questition->save();
 
         return redirect()->back();
-
 
     }
 
@@ -95,23 +92,13 @@ class FacilitatorController extends Controller
      */
     public function destroy($id)
     {
-        $facilitator = Admin::find($id);
-        $facilitator->delete();
+        $questition =  Questition::find($id);
+        $questition->delete();
         return redirect()->back();
     }
-
-    public function home(){
-        $facilitator = Admin::count();
-        $user = User::count();
-        return view('admin.facilitator.home')->with([
-            'facilitator'=>$facilitator,
-            'user'=>$user,
-        ]);
-    }
-    public function questions(){
-        return view('admin.facilitator.add_questions');
-    }
-    public function current(){
-        return view('admin.facilitator.current_questions');
+    public function add_questions(){
+        $programme = Programme::all();
+        $questions = Questition::all();
+        return view('admin.facilitator.add_questions',compact('questions','programme'));
     }
 }

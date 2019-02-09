@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from neox-admin-templates.multipurposethemes.com/src/pages/samplepage/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 05 Feb 2019 11:40:08 GMT -->
 <head>
   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://neox-admin-templates.multipurposethemes.com/images/favicon.ico">
+    <link rel="icon" href="{{asset('assets/logo.png')}}">
 
-    <title>NeoX Admin - Log in </title>
+    <title>Adrian Admin - Log in </title>
   
 	<!-- Bootstrap 4.0-->
 <link rel="stylesheet" href="{{asset('assets/vendor_components/bootstrap/dist/css/bootstrap.min.css')}}">

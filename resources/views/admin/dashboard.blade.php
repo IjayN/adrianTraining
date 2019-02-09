@@ -11,9 +11,10 @@
 
                       <div class="box-body">
                         <p class="text-success text-uppercase">Nature</p>
-                        <h4><a href="#">Beautiful Image Blog Post</a></h4>
-         <br>
-                        <br>
+                        <h4><a href="#">Total Facilitators</a></h4>
+
+                          <h3><strong>{{$facilitator}}</strong></h3>
+
                         <hr class="my-0">
 
                         <div class="flexbox align-items-center mt-15">
@@ -34,9 +35,9 @@
 
                       <div class="box-body">
                         <p class="text-success text-uppercase">Nature</p>
-                        <h4><a href="#">Beautiful Image Blog Post</a></h4>
-         <br>
-                        <br>
+                        <h4><a href="#">Total Users</a></h4>
+
+                          <h3><strong>{{$user}}</strong></h3>
                         <hr class="my-0">
 
                         <div class="flexbox align-items-center mt-15">
@@ -57,9 +58,8 @@
 
                       <div class="box-body">
                         <p class="text-success text-uppercase">Nature</p>
-                        <h4><a href="#">Beautiful Image Blog Post</a></h4>
-         <br>
-                        <br>
+                        <h4><a href="#">Total Questions Posted</a></h4>
+                          <h3><strong>40</strong></h3>
                         <hr class="my-0">
 
                         <div class="flexbox align-items-center mt-15">
